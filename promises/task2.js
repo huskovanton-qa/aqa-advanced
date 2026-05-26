@@ -1,4 +1,4 @@
-function todos () {
+function todos() {
   return fetch('https://jsonplaceholder.typicode.com/todos/1')
     .then((response) => response.json())
     .catch((error) => {
@@ -6,8 +6,7 @@ function todos () {
     });
 }
 
-
-function users () {
+function users() {
   return fetch('https://jsonplaceholder.typicode.com/users/1')
     .then((response) => response.json())
     .catch((error) => {

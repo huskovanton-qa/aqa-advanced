@@ -26,7 +26,6 @@ async function users() {
   }
 }
 
-
 const allPromises = Promise.all([todos(), users()]);
 
 allPromises.then((result) => {

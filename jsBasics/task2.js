@@ -1,7 +1,7 @@
-const firstPerson = "Anton";
-const secondPerson = "Vlad";
+const firstPerson = 'Anton';
+const secondPerson = 'Vlad';
 
-const greeting1 = "Hello, " + firstPerson + " and " + secondPerson;
+const greeting1 = 'Hello, ' + firstPerson + ' and ' + secondPerson;
 
 const greeting2 = `Hello, ${firstPerson} and ${secondPerson}`;
 
