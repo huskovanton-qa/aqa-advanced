@@ -19,14 +19,13 @@ test.describe('Sign Up form', () => {
   }) => {
     const email = `aqa${Math.floor(Math.random() * 1000000)}@example.com`;
 
-    await registrationPage.fillForm({
+    await registrationPage.register({
       name: 'bnbnbnbnnbn',
       lastName: 'bnbnnbnbnbnb',
       email,
       password: 'Password123',
       repeatPassword: 'Password123',
     });
-    await registrationPage.registerButton.click();
 
     await expect(page).toHaveURL('/panel/garage');
     await expect(registrationPage.profileButton).toHaveText(' My profile ');
@@ -35,14 +34,13 @@ test.describe('Sign Up form', () => {
   test('Check that the user cannot register with an already registered email', async ({
     page,
   }) => {
-    await registrationPage.fillForm({
+    await registrationPage.register({
       name: 'bnbnbnbnnbn',
       lastName: 'bnbnnbnbnbnb',
       email: 'fgfgfggfgfgfggfg@gmail.com',
       password: 'Password123',
       repeatPassword: 'Password123',
     });
-    await registrationPage.registerButton.click();
 
     await expect(registrationPage.alert).toHaveText('User already exists');
   });

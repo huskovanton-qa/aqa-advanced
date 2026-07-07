@@ -17,6 +17,11 @@ export class RegistrationPage {
     this.profileButton = page.locator('#userNavDropdown');
   }
 
+  async register(userData) {
+  await this.fillForm(userData);
+  await this.registerButton.click();
+}
+
   async fillForm({ name, lastName, email, password, repeatPassword }) {
     await this.nameInput.fill(name);
     await this.lastNameInput.fill(lastName);
