@@ -1,13 +1,12 @@
-
 export class RegistrationPage {
   constructor(page) {
     this._page = page;
 
-    this._nameInput = page.locator('#signupName');
-    this._lastNameInput = page.locator('#signupLastName');
-    this._emailInput = page.locator('#signupEmail');
-    this._passwordInput = page.locator('#signupPassword');
-    this._repeatPasswordInput = page.locator('#signupRepeatPassword');
+    this.nameInput = page.locator('#signupName');
+    this.lastNameInput = page.locator('#signupLastName');
+    this.emailInput = page.locator('#signupEmail');
+    this.passwordInput = page.locator('#signupPassword');
+    this.repeatPasswordInput = page.locator('#signupRepeatPassword');
 
     this.registerButton = page
       .locator('.btn.btn-primary')
@@ -18,41 +17,19 @@ export class RegistrationPage {
     this.profileButton = page.locator('#userNavDropdown');
   }
 
-  async register({
-    name,
-    lastName,
-    email,
-    password,
-    repeatPassword,
-  }) {
-    await this._nameInput.fill(name);
-    await this._lastNameInput.fill(lastName);
-    await this._emailInput.fill(email);
-    await this._passwordInput.fill(password);
-    await this._repeatPasswordInput.fill(repeatPassword);
-
-    await this.registerButton.click();
-  }
-
-  async fillForm({
-    name,
-    lastName,
-    email,
-    password,
-    repeatPassword,
-  }) {
-    await this._nameInput.fill(name);
-    await this._lastNameInput.fill(lastName);
-    await this._emailInput.fill(email);
-    await this._passwordInput.fill(password);
-    await this._repeatPasswordInput.fill(repeatPassword);
+  async fillForm({ name, lastName, email, password, repeatPassword }) {
+    await this.nameInput.fill(name);
+    await this.lastNameInput.fill(lastName);
+    await this.emailInput.fill(email);
+    await this.passwordInput.fill(password);
+    await this.repeatPasswordInput.fill(repeatPassword);
   }
 
   async touchAllFields() {
-    await this._nameInput.click();
-    await this._lastNameInput.click();
-    await this._emailInput.click();
-    await this._passwordInput.click();
-    await this._repeatPasswordInput.click();
+    await this.nameInput.click();
+    await this.lastNameInput.click();
+    await this.emailInput.click();
+    await this.passwordInput.click();
+    await this.repeatPasswordInput.click();
   }
 }

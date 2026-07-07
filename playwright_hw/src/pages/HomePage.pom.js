@@ -1,10 +1,11 @@
-
 export class HomePage {
   constructor(page) {
     this._page = page;
 
-    this._signInButton = page.getByRole('button', { name: 'Sign In' });
-    this._registrationButton = page.getByRole('button', { name: 'Registration' });
+    this.signInButton = page.getByRole('button', { name: 'Sign In' });
+    this.registrationButton = page.getByRole('button', {
+      name: 'Registration',
+    });
   }
 
   async open() {
@@ -12,7 +13,7 @@ export class HomePage {
   }
 
   async openRegistrationForm() {
-    await this._signInButton.click();
-    await this._registrationButton.click();
+    await this.signInButton.click();
+    await this.registrationButton.click();
   }
-}           
+}
